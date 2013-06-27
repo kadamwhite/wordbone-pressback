@@ -1,0 +1,39 @@
+<article id="post-<%= get('id') %>" class="post-<%= get('id') %> type-<%= get('type') %> status-<%= get('status') %> <%= _.map( get('categories'), function( category ) { return 'category-' + category.slug; } ).join(' ') %>">
+	<header class="entry-header">
+		<% if ( typeof get('thumbnail_size') !== 'undefined' ) { %>
+			<img src="<%= get('thumbnail_images')[ get('thumbnail_size') ].url %>"
+			     class="wp-post-image attachment-<%= get('thumbnail_size') %>"
+			     width="<%= get('thumbnail_images')[ get('thumbnail_size') ].width %>"
+			     height="<%= get('thumbnail_images')[ get('thumbnail_size') ].height %>" />
+		<% } %>
+		<h1 class="entry-title">
+			<a href="<%= get('url') %>" title="<%- get('title') %>" rel="bookmark"><%= get('title') %></a>
+		</h1>
+		<% if ( get('comment_status') === 'open' ) { %>
+			<div class="comments-link">
+				<span class="leave-reply">
+					<a href="<%= get('url') %>#respond">Leave a Reply</a>
+				</span>
+			</div><!-- .comments-link -->
+		<% } %>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<%= get('content') %>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted
+		<% if ( get('categories').length ) { %>
+			in <%= _.chain( get('categories') ).map(function( category ) {
+				return category.title;
+			}).value().join(', ') %>
+		<% } %>
+		on <a href="<%= get('url') %>" title="Permalink to <%- get('title') %>" rel="bookmark">
+			<time class="entry-date" datetime="<%= get('date') %>"><%= dateString() %></time>
+		</a>
+		by <span class="author vcard">
+			<a class="url fn n" href="./?author=<%- get('author').id %>" title="View all posts by <%- get('author').name %>" rel="author"><%= get('author').name %></a>
+		</span>
+	</footer><!-- .entry-meta -->
+</article><!-- #post -->

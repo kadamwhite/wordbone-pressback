@@ -90,6 +90,35 @@ require( get_template_directory() . '/inc/custom-header.php' );
 function twentytwelve_scripts_styles() {
 	global $wp_styles;
 
+	wp_register_script(
+		'twentyfuture-templates',
+		get_template_directory_uri() . '/js/templates.js',
+		array( 'underscore' ),
+		'0.1',
+		true
+	);
+	wp_register_script(
+		'twentyfuture-views',
+		get_template_directory_uri() . '//js/src/views.js',
+		array( 'backbone', 'twentyfuture-templates' ),
+		'0.1',
+		true
+	);
+	wp_register_script(
+		'twentyfuture-models',
+		get_template_directory_uri() . '/js/src/models.js',
+		array( 'backbone' ),
+		'0.1',
+		true
+	);
+	wp_register_script(
+		'twentyfuture-main',
+		get_template_directory_uri() . '/js/src/main.js',
+		array( 'twentyfuture-views', 'twentyfuture-models' ),
+		'0.1',
+		true
+	);
+	wp_enqueue_script( 'twentyfuture-main' );
 	/*
 	 * Adds JavaScript to pages with the comment form to support
 	 * sites with threaded comments (when in use).
