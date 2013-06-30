@@ -1,0 +1,18 @@
+/* Put your css in here */
+
+body {
+  background: url('../img/tweed.png');
+}
+
+.container {
+  background-color: white;
+  border-radius: 3px;
+}
+
+.row > div {
+  padding: .5em;
+}
+
+.spinner {
+  margin: 50px auto;
+}

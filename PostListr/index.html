@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>WordPress.com API demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+    <link href="css/spinner.css" rel="stylesheet" media="screen">
+    <script data-require="underscore.js" data-semver="1.4.4" src="js/lib/underscore.js"></script>
+    <script data-require="jquery" data-semver="1.10.1" src="js/lib/jquery-1.10.1.js"></script>
+    <script data-require="backbone.js" data-semver="1.0.0" src="js/lib/backbone.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="hero-unit">
+        <h1>PostListr</h1>
+        <hr />
+        <form>
+          <p>
+            Enter the URL of a WordPress.com or Jetpack JSON API-enabled blog
+          </p>
+          <input class="input-large search-query" type="text"
+                 placeholder="Website URL" />
+          <button type="submit" class="btn btn-main">
+            Load Posts
+          </button>
+        </form>
+        <hr />
+      </div>
+
+      <div class="windows8 spinner">
+        <div class="wBall" id="wBall_1">
+          <div class="wInnerBall"></div>
+        </div>
+        <div class="wBall" id="wBall_2">
+          <div class="wInnerBall"></div>
+        </div>
+        <div class="wBall" id="wBall_3">
+          <div class="wInnerBall"></div>
+        </div>
+        <div class="wBall" id="wBall_4">
+          <div class="wInnerBall"></div>
+        </div>
+        <div class="wBall" id="wBall_5">
+          <div class="wInnerBall"></div>
+        </div>
+      </div> <!-- .spinner -->
+
+      <div id="app" class="container-fluid"></div>
+    </div>
+    <script src="js/templates.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+
+</html>

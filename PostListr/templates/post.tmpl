@@ -1,0 +1,22 @@
+<div class="row">
+
+  <div class="span2">
+    <% if ( featured_image ) { %>
+    <img class="span2" src="<%= featured_image %>" alt="Featured Image for <%- title %>"/>
+    <% } %>
+  </div> <!-- .span2 -->
+
+  <div class="span8">
+    <div class="pad">
+      <h4>
+        <a href="<%= URL %>"><%= title %></a>
+      </h4>
+      <p class="meta">
+        <em>Posted on <%= new Date( date ).toDateString() %> by <%= author.name %></em>
+      </p>
+    </div> <!-- .pad -->
+  </div> <!-- .span8 -->
+
+</div> <!-- .row -->
+
+<hr />
