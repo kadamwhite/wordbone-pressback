@@ -1,0 +1,12 @@
+{
+  "name": "jetpack-api",
+  "version": "0.0.0",
+  "description": "Playing with the Jetpack JSON API",
+  "main": "app.js",
+  "author": "",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jst": "~0.5.0"
+  }
+}
