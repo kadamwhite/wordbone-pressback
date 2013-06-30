@@ -1,4 +1,4 @@
-# BackPress WordBone
+# WordBone PressBack
 
 This repository serves to hold my ongoing experiments in building applications with [Backbone.js](http://backbonejs.org) on top of [WordPress](http://wordpress.org).
 
