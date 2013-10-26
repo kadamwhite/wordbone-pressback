@@ -1,0 +1,34 @@
+<article id="post-<%= get('ID') %>" class="post-<%= get('ID') %> type-<%= get('type') %> status-<%= get('status') %> <%= get('terms').category.name %>">
+    <header class="entry-header">
+        <% if ( get('featured_image') ) { %>
+            <img src="<%= get('featured_image').attachment_meta.sizes.thumbnail.url %>"
+                 class="wp-post-image attachment-thumbnail %>"
+                 width="<%= get('featured_image').attachment_meta.sizes.thumbnail.width %>"
+                 height="<%= get('featured_image').attachment_meta.sizes.thumbnail.height %>" />
+        <% } %>
+        <h1 class="entry-title">
+            <a href="<%= get('link') %>" title="<%- get('title') %>" rel="bookmark"><%= get('title') %></a>
+        </h1>
+        <% if ( get('comment_status') === 'open' ) { %>
+            <div class="comments-link">
+                <span class="leave-reply">
+                    <a href="<%= get('link') %>#respond">Leave a Reply</a>
+                </span>
+            </div><!-- .comments-link -->
+        <% } %>
+    </header><!-- .entry-header -->
+
+    <div class="entry-content">
+        <%= get('content') %>
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+        This entry was posted in <%= get('terms').category.name %>
+        on <a href="<%= get('link') %>" title="Permalink to <%- get('title') %>" rel="bookmark">
+            <time class="entry-date" datetime="<%= get('date') %>"><%= humanReadableDate( get('date') ) %></time>
+        </a>
+        by <span class="author vcard">
+            <a class="url fn n" href="./?author=<%- get('author').attributes.ID %>" title="View all posts by <%- get('author').name %>" rel="author"><%= get('author').name %></a>
+        </span>
+    </footer><!-- .entry-meta -->
+</article><!-- #post -->
